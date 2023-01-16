@@ -1,0 +1,84 @@
+/* Normal Css configration */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling for this project */
+body{
+    background: #000;
+    color: #fff;
+    font-family: sans-serif;
+    /* CSS code to center our div having class .para */
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+/* Styling for paragraph and anchor tags of HTML */
+p,a{
+    font-size: 3.3rem;
+    text-transform: uppercase; /*CSS property to make text UPPERCASE*/
+    color: #fff;
+    text-decoration: none; /*CSS property to remove default styling from anchor tags*/
+}
+
+.line{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* We are using (HAS) selector in order to manipulate hovering effect. The CSS :has selector helps you select elements when they contain other elements that match the selector you pass into :has()  */
+/* Basically this statement means to check if .para(div) having .facing class && :hover property so if it's true then all the paragraph tags which will not contain .fancy class && not in hovering state will reduce there Opacity to 20% i.e .2 */
+.para:has(.fancy:hover) p:not(.fancy:hover){
+    opacity: .2;
+}
+
+/* This selector will select all the .letter class elements which having a parent element contains .fancy class */
+.fancy > .letter{
+    display: inline-block;
+    transition: transform 500ms ease,color 500ms ease;
+    
+}
+
+
+.para:has(.fancy:hover) .letter{
+    color: #39FF14;
+
+}
+
+.fancy:hover > .letter:nth-child(1){
+    transform: translate(-40%,20%) rotate(20deg);
+}
+.fancy:hover > .letter:nth-child(2){
+    transform:  translate(-60%,20%) rotate(-20deg);
+}
+.fancy:hover > .letter:nth-child(3){
+    transform: translate(-10%,-20%) rotate(10deg);
+}
+.fancy:hover > .letter:nth-child(4){
+    transform: translate(10%,10%) rotate(3deg);
+}
+.fancy:hover > .letter:nth-child(5){
+    transform: translate(10%,50%) rotate(10deg);
+}
+.fancy:hover > .letter:nth-child(6){
+    transform: translate(10%,-10%) rotate(10deg);
+}
+.fancy:hover > .letter:nth-child(7){
+    transform: translate(10%,-40%) rotate(10deg);
+}
+
+.fancy:hover > .letter:nth-child(9){
+    transform: translate(10%,40%) rotate(40deg);
+}
+.fancy:hover > .letter:nth-child(10){
+    transform: translate(10%,-40%) rotate(-30deg);
+}
+.fancy:hover > .letter:nth-child(11){
+    transform: translate(10%,40%) rotate(-30deg);
+}
+
+
+
